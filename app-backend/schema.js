@@ -1,12 +1,20 @@
 const schema = `
-type Contributor {   
-  name: String!
-  location: String!
+type Provider {
+  id: Int
+  name: String
+  streetAddress: String
+  city: String
+  state: String
+  zipcode: Int
+  hospitalReferralRegionDescription: String
+  totalDischarges: Int
+  averageCoveredCharges: String
+  averageTotalPayments: String
+  averageMedicarePayments: String
 }
 
-#returns list of contributors
 type Query {
-  getContributorFeed : [Contributor]
+  getProviders: [Provider]
 }`;
 
 // eslint-disable-next-line import/prefer-default-export
