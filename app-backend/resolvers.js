@@ -30,13 +30,10 @@ const providers = [
 // eslint-disable-next-line import/prefer-default-export
 export const resolvers = {
   Query: {
-    getProviders: (id) => {
-      if(id) {
-        return providers.filter(el => id === el.id);
-      } else {
-        return providers
-      }
-    }
+    getProviders: () => providers,
+    provider: (root, args) => {
+      return Provider.find({ where: args });
+    },
 
-  },
+  }
 };
