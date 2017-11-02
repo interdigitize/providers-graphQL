@@ -1,3 +1,6 @@
+import { find, filter } from 'lodash';
+
+
 const providers = [
   {
     id: 10001,
@@ -31,9 +34,6 @@ const providers = [
 export const resolvers = {
   Query: {
     getProviders: () => providers,
-    provider: (root, args) => {
-      return Provider.find({ where: args });
-    },
-
+    provider: (_, { id }) => find(providers, { id: id }),
   }
 };
