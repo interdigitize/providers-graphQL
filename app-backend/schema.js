@@ -15,7 +15,7 @@ type Provider {
 
 type Query {
   getProviders: [Provider]
-  provider(id: ID!): Provider
+  provider(id: Int!): Provider
 }`;
 
 // eslint-disable-next-line import/prefer-default-export
