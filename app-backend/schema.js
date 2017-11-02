@@ -15,6 +15,7 @@ type Provider {
 
 type Query {
   getProviders: [Provider]
+  providers(state: String): [Provider]
   provider(id: Int!): Provider
 }`;
 
